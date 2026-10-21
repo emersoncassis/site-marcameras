@@ -1,0 +1,10 @@
+MAR Câmeras — landing page
+
+HOSTINGER: envie index.html, a pasta assets e o .htaccess para public_html.
+Depois que o SSL estiver ativo, descomente o bloco HTTPS no .htaccess.
+
+DOKPLOY: Application, provider Git, branch main, Build Type Dockerfile, porta 80.
+
+ANTES DE PUBLICAR: preencher CONFIG no fim do index.html (regiao, razaoSocial, cnpj),
+conferir o domínio nas tags canonical/og:url/og:image (hoje: marcameras.com.br)
+e remover a tarja <div class="tarja-dev" id="tarjaDev">.

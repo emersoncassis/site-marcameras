@@ -1,0 +1,4 @@
+.git
+*.zip
+_to_delete
+node_modules

@@ -1,0 +1,499 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MAR Câmeras — Segurança Eletrônica</title>
+<meta name="description" content="MAR Câmeras: câmeras, controle de acesso, monitoramento, alarme de incêndio, redes e automação. Peça seu orçamento pelo WhatsApp.">
+<meta name="theme-color" content="#04070c">
+<link rel="canonical" href="https://marcameras.com.br/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MAR Câmeras">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://marcameras.com.br/">
+<meta property="og:title" content="MAR Câmeras — Segurança Eletrônica">
+<meta property="og:description" content="Câmeras, controle de acesso, monitoramento, redes e automação. Deixe seu lar mais seguro. Peça seu orçamento.">
+<meta property="og:image" content="https://marcameras.com.br/assets/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Logo da MAR Câmeras, Segurança Eletrônica">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MAR Câmeras — Segurança Eletrônica">
+<meta name="twitter:description" content="Câmeras, controle de acesso, monitoramento, redes e automação. Peça seu orçamento.">
+<meta name="twitter:image" content="https://marcameras.com.br/assets/img/og-cover.jpg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/img/icon-180.png">
+<link rel="preload" href="assets/frames/seq.json" as="fetch" crossorigin>
+<link rel="stylesheet" href="assets/fontes.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"MAR Câmeras","description":"Segurança eletrônica: câmeras, controle de acesso, monitoramento, alarme de incêndio, redes e automação.","url":"https://marcameras.com.br/","image":"https://marcameras.com.br/assets/img/og-cover.jpg","telephone":"+55 84 99148-4596","sameAs":["https://www.instagram.com/marcameras_/"]}
+</script>
+<style>
+:root{
+  --bg:#04070c; --sup:#0a111b; --txt:#eef3f8; --suave:#9fb0c3; --linha:rgba(238,243,248,.12);
+  --azul:#2b8ff0; --azul-claro:#8cc8ff; --sobre-azul:#02101f;
+  --gutter:clamp(16px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--bg);-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--bg);color:var(--txt);font:400 16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--azul-claro);outline-offset:3px}
+
+/* tarja */
+.tarja-dev{position:fixed;top:0;left:0;right:0;z-index:60;background:var(--azul);color:var(--sobre-azul);font:600 11px/1 Inter,sans-serif;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:6px 8px}
+/* cabeçalho */
+.topo{position:fixed;top:23px;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px var(--gutter);pointer-events:none;transition:background .4s}
+.topo.solido{background:linear-gradient(to bottom,rgba(4,7,12,.85),rgba(4,7,12,0))}
+.topo>*{pointer-events:auto}
+.topo .marca img{height:52px;width:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:48px;padding:0 28px;border-radius:999px;background:var(--azul);color:#fff;font:600 13px/1 Inter,sans-serif;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:background .25s,transform .25s;box-shadow:0 0 0 1px rgba(140,200,255,.25),0 10px 30px -10px rgba(43,143,240,.7)}
+.btn:hover{background:#3d9cff;transform:translateY(-1px)}
+.btn.peq{min-height:44px;padding:0 20px;font-size:12px}
+.link{font:500 14px/1 Inter,sans-serif;letter-spacing:.08em;text-decoration:none;color:var(--txt);background:linear-gradient(var(--azul-claro),var(--azul-claro)) left bottom/0 1px no-repeat;padding-bottom:4px;transition:background-size .35s}
+.link:hover{background-size:100% 1px}
+
+/* palco */
+.palco{position:fixed;inset:0;z-index:0;background:#000}
+.palco canvas{width:100%;height:100%;display:block}
+.palco .vinheta{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 45%,rgba(0,0,0,.55) 100%)}
+.palco .sombra{position:absolute;inset:0;pointer-events:none;transition:opacity .6s}
+.palco .sombra.esq{background:linear-gradient(90deg,rgba(2,5,10,.82) 0%,rgba(2,5,10,.45) 38%,rgba(2,5,10,0) 62%)}
+.palco .sombra.dir{background:linear-gradient(270deg,rgba(2,5,10,.82) 0%,rgba(2,5,10,.45) 38%,rgba(2,5,10,0) 62%);opacity:0}
+.palco .sombra.base{background:linear-gradient(0deg,rgba(2,5,10,.92) 0%,rgba(2,5,10,.5) 30%,rgba(2,5,10,0) 52%);display:none}
+.palco .grao{position:absolute;inset:-50%;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:grao 1.2s steps(6) infinite}
+@keyframes grao{0%{transform:translate(0,0)}20%{transform:translate(-4%,3%)}40%{transform:translate(3%,-2%)}60%{transform:translate(-2%,-4%)}80%{transform:translate(4%,2%)}100%{transform:translate(0,0)}}
+
+/* carregamento */
+.carregando{position:fixed;inset:0;z-index:80;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .7s}
+.carregando img{width:min(260px,60vw);opacity:.9}
+.carregando .barra{width:min(220px,50vw);height:1px;background:var(--linha);overflow:hidden}
+.carregando .barra i{display:block;height:100%;width:0;background:var(--azul)}
+.carregando.fora{opacity:0;pointer-events:none}
+
+/* jornada */
+.jornada{position:relative;z-index:2}
+.cap{position:relative;height:160svh}
+.cap:last-child{height:175svh}
+.cap .fixo{position:sticky;top:0;height:100svh;display:flex;align-items:center;padding:110px var(--gutter) 64px}
+.cap[data-lado="dir"] .fixo{justify-content:flex-end}
+.texto{max-width:min(560px,100%)}
+.cap[data-lado="dir"] .texto{text-align:right}
+.rotulo{display:inline-block;font:600 12px/1 Inter,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--azul-claro);margin-bottom:18px}
+.rotulo b{color:var(--txt);font-weight:600;margin-right:.8em}
+h1,h2{font-family:"Barlow Condensed",Inter,sans-serif;font-weight:700;text-transform:uppercase;line-height:.93;letter-spacing:.005em}
+h2{font-size:clamp(44px,7vw,96px)}
+.frase{margin-top:20px;font-size:clamp(16px,1.35vw,19px);color:#d5dee9;max-width:440px}
+.cap[data-lado="dir"] .frase{margin-left:auto}
+.capa h1{font-size:clamp(56px,10vw,150px)}
+.capa h1 span{display:block;font-size:.34em;letter-spacing:.32em;color:var(--azul-claro);margin-top:.35em;font-weight:600}
+.capa .acoes{display:flex;flex-wrap:wrap;gap:22px;align-items:center;margin-top:34px}
+.dica{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);font:500 11px/1 Inter,sans-serif;letter-spacing:.3em;text-transform:uppercase;color:var(--suave);display:flex;flex-direction:column;align-items:center;gap:10px}
+.dica i{width:1px;height:38px;background:linear-gradient(var(--azul-claro),transparent);animation:dica 1.8s ease-in-out infinite}
+@keyframes dica{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}}
+.final h2{font-size:clamp(40px,6vw,84px)}
+.final .acoes{margin-top:30px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.cap[data-lado="dir"] .acoes{justify-content:flex-end}
+
+/* depois da jornada */
+.depois{position:relative;z-index:3;background:var(--bg)}
+.depois::before{content:"";position:absolute;left:0;right:0;top:-160px;height:160px;background:linear-gradient(transparent,var(--bg));pointer-events:none}
+.bloco{padding:clamp(80px,12vw,150px) var(--gutter);max-width:1240px;margin:0 auto}
+.bloco+.bloco{border-top:1px solid var(--linha)}
+.bloco h2{font-size:clamp(38px,5vw,68px)}
+.servicos{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--linha);border:1px solid var(--linha)}
+.servicos li{list-style:none;background:var(--bg);padding:30px 26px 34px}
+.servicos h3{font:700 24px/1 "Barlow Condensed",sans-serif;text-transform:uppercase;letter-spacing:.02em}
+.servicos h3::before{content:"";display:block;width:22px;height:2px;background:var(--azul);margin-bottom:18px}
+.servicos p{margin-top:12px;color:var(--suave);font-size:15px}
+.passos{margin-top:48px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;counter-reset:p}
+.passos li{list-style:none;counter-increment:p;border-top:1px solid var(--linha);padding-top:22px}
+.passos li::before{content:"0" counter(p);display:block;font:700 15px/1 "Barlow Condensed",sans-serif;letter-spacing:.2em;color:var(--azul-claro);margin-bottom:14px}
+.passos h3{font:700 22px/1.05 "Barlow Condensed",sans-serif;text-transform:uppercase}
+.passos p{margin-top:10px;color:var(--suave);font-size:15px}
+.fecho{text-align:center}
+.fecho h2{font-size:clamp(44px,7vw,100px)}
+.fecho p{color:var(--suave);margin:20px auto 0;max-width:520px}
+.fecho .acoes{margin-top:36px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.contato{margin-top:26px;color:var(--suave);font-size:14px;letter-spacing:.04em}
+.contato a{text-decoration:none;color:var(--txt)}
+footer{border-top:1px solid var(--linha);padding:36px var(--gutter) 46px;color:var(--suave);font-size:12.5px;line-height:1.7}
+footer .lin{max-width:1240px;margin:0 auto;display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-start}
+footer img{height:34px;width:auto;opacity:.85}
+footer .aviso{max-width:620px}
+
+/* revelação de texto */
+.rv{will-change:opacity,filter,transform}
+
+/* celular */
+@media (max-width:820px),(orientation:portrait){
+  .palco .sombra.esq,.palco .sombra.dir{display:none}
+  .palco .sombra.base{display:block}
+  .cap .fixo{align-items:flex-end;padding:96px 16px 76px}
+  .cap[data-lado="dir"] .fixo{justify-content:flex-start}
+  .cap[data-lado="dir"] .texto,.cap .texto{text-align:left}
+  .cap[data-lado="dir"] .frase{margin-left:0}
+  .cap[data-lado="dir"] .acoes{justify-content:flex-start}
+  .capa .fixo{padding-bottom:96px}
+  .topo{padding:12px 16px}
+  .topo .marca img{height:32px}
+  .bloco{padding:80px 16px}
+  .servicos{grid-template-columns:1fr}
+  .passos{grid-template-columns:1fr 1fr;gap:28px 18px}
+  footer{padding:32px 16px 40px}
+}
+@media (max-width:420px){.passos{grid-template-columns:1fr}.topo .btn.peq{padding:0 16px;letter-spacing:.12em}}
+
+/* modo estático */
+html.estatico .palco canvas{display:none}
+html.estatico .palco{background:#000 url(assets/img/poster-mobile.webp) center/contain no-repeat}
+@media (min-width:821px) and (orientation:landscape){html.estatico .palco{background-image:url(assets/img/poster-desktop.webp);background-size:cover}}
+html.estatico .cap{height:auto;min-height:100svh}
+html.estatico .cap .fixo{position:relative;min-height:100svh}
+html.estatico .carregando{display:none}
+html.estatico .dica{display:none}
+@media (prefers-reduced-motion:reduce){.palco .grao,.dica i{animation:none}}
+</style>
+</head>
+<body>
+<div class="tarja-dev" id="tarjaDev">Em desenvolvimento</div>
+
+<header class="topo" id="topo">
+  <a class="marca" href="#inicio" aria-label="MAR Câmeras, início"><img src="assets/img/logo-mar.png" alt="MAR Câmeras" width="201" height="96"></a>
+  <a class="btn peq js-orcamento" href="#" target="_blank" rel="noopener">Orçamento</a>
+</header>
+
+<div class="carregando" id="carregando" aria-hidden="true">
+  <img src="assets/img/logo-mar.png" alt="">
+  <div class="barra"><i id="barra"></i></div>
+</div>
+
+<div class="palco" id="palco" aria-hidden="true">
+  <canvas id="tela"></canvas>
+  <div class="sombra esq" id="sombraEsq"></div>
+  <div class="sombra dir" id="sombraDir"></div>
+  <div class="sombra base"></div>
+  <div class="vinheta"></div>
+  <div class="grao"></div>
+</div>
+
+<main>
+<div class="jornada" id="jornada">
+
+  <section class="cap capa" id="inicio" data-lado="esq">
+    <div class="fixo">
+      <div class="texto">
+        <span class="rotulo rv">Segurança eletrônica</span>
+        <h1 class="rv" id="titulo">MAR Câmeras<span>Deixe seu lar mais seguro</span></h1>
+        <p class="frase rv">Câmeras, controle de acesso, monitoramento, redes e automação. Do projeto à manutenção.</p>
+        <div class="acoes rv">
+          <a class="btn js-orcamento" href="#" target="_blank" rel="noopener">Pedir orçamento</a>
+          <a class="link" href="#servicos">Ver serviços</a>
+        </div>
+      </div>
+    </div>
+    <div class="dica" id="dica">Role<i></i></div>
+  </section>
+
+  <section class="cap" data-lado="esq">
+    <div class="fixo"><div class="texto">
+      <span class="rotulo rv"><b>01</b>O olhar</span>
+      <h2 class="rv">Cada ângulo pensado.</h2>
+      <p class="frase rv">Projeto de câmeras feito no local, para cobrir o que realmente importa.</p>
+    </div></div>
+  </section>
+
+  <section class="cap" data-lado="esq">
+    <div class="fixo"><div class="texto">
+      <span class="rotulo rv"><b>02</b>Espaços públicos</span>
+      <h2 class="rv">Cidades mais seguras.</h2>
+      <p class="frase rv">Câmeras, botão de emergência e comunicação trabalhando juntos no mesmo poste.</p>
+    </div></div>
+  </section>
+
+  <section class="cap" data-lado="esq">
+    <div class="fixo"><div class="texto">
+      <span class="rotulo rv"><b>03</b>Monitoramento</span>
+      <h2 class="rv">Tudo numa tela só.</h2>
+      <p class="frase rv">Imagem, contagem de pessoas e alertas para quem precisa decidir rápido.</p>
+    </div></div>
+  </section>
+
+  <section class="cap" data-lado="esq">
+    <div class="fixo"><div class="texto">
+      <span class="rotulo rv"><b>04</b>Controle de acesso</span>
+      <h2 class="rv">Quem entra, você decide.</h2>
+      <p class="frase rv">Reconhecimento facial e fechadura eletrônica na porta certa.</p>
+    </div></div>
+  </section>
+
+  <section class="cap" data-lado="dir">
+    <div class="fixo"><div class="texto">
+      <span class="rotulo rv"><b>05</b>O alerta</span>
+      <h2 class="rv">O aviso chega no seu celular.</h2>
+      <p class="frase rv">Rede organizada e energia estável por trás de cada notificação.</p>
+    </div></div>
+  </section>
+
+  <section class="cap" data-lado="dir">
+    <div class="fixo"><div class="texto">
+      <span class="rotulo rv"><b>06</b>Acesso negado</span>
+      <h2 class="rv">A porta continua fechada.</h2>
+      <p class="frase rv">O sistema registra, avisa e mantém a fechadura travada.</p>
+    </div></div>
+  </section>
+
+  <section class="cap" data-lado="esq">
+    <div class="fixo"><div class="texto">
+      <span class="rotulo rv"><b>07</b>Da casa à indústria</span>
+      <h2 class="rv">Obra limpa. Cabo no lugar.</h2>
+      <p class="frase rv">Residências, comércios, indústrias e áreas rurais.</p>
+    </div></div>
+  </section>
+
+  <section class="cap" data-lado="esq">
+    <div class="fixo"><div class="texto">
+      <span class="rotulo rv"><b>08</b>Fim do dia</span>
+      <h2 class="rv">O.S. finalizada.</h2>
+      <p class="frase rv">Instalação entregue, sistema funcionando e suporte quando precisar.</p>
+    </div></div>
+  </section>
+
+  <section class="cap final" data-lado="esq">
+    <div class="fixo"><div class="texto">
+      <span class="rotulo rv">Uma instalação. Uma solução.</span>
+      <h2 class="rv">Deixe seu lar mais seguro.</h2>
+      <div class="acoes rv">
+        <a class="btn js-orcamento" href="#" target="_blank" rel="noopener">Pedir orçamento</a>
+      </div>
+    </div></div>
+  </section>
+
+</div>
+
+<div class="depois">
+  <section class="bloco" id="servicos">
+    <span class="rotulo">Serviços</span>
+    <h2>O que a MAR Câmeras faz</h2>
+    <ul class="servicos">
+      <li><h3>Câmeras e CFTV</h3><p>Câmeras internas e externas, gravação e acesso pelo celular.</p></li>
+      <li><h3>Controle de acesso</h3><p>Reconhecimento facial, catracas e fechaduras eletrônicas.</p></li>
+      <li><h3>Monitoramento</h3><p>Video wall, análise de imagem e contagem de pessoas.</p></li>
+      <li><h3>Alarme de incêndio</h3><p>Centrais, detectores e sinalização instalados por completo.</p></li>
+      <li><h3>Redes e cabeamento</h3><p>Cabeamento estruturado, racks organizados e Wi-Fi.</p></li>
+      <li><h3>Automação</h3><p>Portões, energia e soluções para áreas rurais e industriais.</p></li>
+    </ul>
+  </section>
+
+  <section class="bloco">
+    <span class="rotulo">Como funciona</span>
+    <h2>Do primeiro contato à manutenção</h2>
+    <ol class="passos">
+      <li><h3>Conversa</h3><p>Você conta o que precisa pelo WhatsApp.</p></li>
+      <li><h3>Visita técnica</h3><p>Avaliação no local antes de qualquer proposta.</p></li>
+      <li><h3>Instalação</h3><p>Obra limpa, cabos organizados e sistema testado.</p></li>
+      <li><h3>Suporte</h3><p>Ajustes e manutenção depois da entrega.</p></li>
+    </ol>
+  </section>
+
+  <section class="bloco fecho">
+    <span class="rotulo">Orçamento</span>
+    <h2>Vamos proteger o que é seu.</h2>
+    <p>Atendimento em <span class="js-regiao">sua região</span>. Conte o que você precisa e receba uma proposta sob medida.</p>
+    <div class="acoes">
+      <a class="btn js-orcamento" href="#" target="_blank" rel="noopener">Pedir orçamento no WhatsApp</a>
+      <a class="link" href="https://www.instagram.com/marcameras_/" target="_blank" rel="noopener">@marcameras_</a>
+    </div>
+    <p class="contato">WhatsApp <a class="js-orcamento" href="#" target="_blank" rel="noopener">(84) 99148-4596</a></p>
+  </section>
+
+  <footer>
+    <div class="lin">
+      <img src="assets/img/logo-mar.png" alt="MAR Câmeras" width="201" height="96" loading="lazy">
+      <div class="aviso">
+        <p><span class="js-razao">MAR Câmeras · Segurança Eletrônica</span><span class="js-cnpj"></span></p>
+        <p>Os serviços de segurança eletrônica reduzem riscos e ampliam o controle, mas não garantem a ausência de ocorrências. Imagens ilustrativas. Instalações seguem a legislação vigente, incluindo a LGPD no tratamento de imagens.</p>
+        <p>© <span id="ano">2026</span> MAR Câmeras.</p>
+      </div>
+    </div>
+  </footer>
+</div>
+</main>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script>
+/* ===== Configuração (preencher) ===== */
+const CONFIG = {
+  whatsapp: '5584991484596',
+  mensagem: 'Olá! Vim pelo site da MAR Câmeras e quero um orçamento.',
+  regiao: '',          // ex.: 'Goianinha e região (RN)' — preencher quando confirmado
+  razaoSocial: '',     // ex.: 'Fulano Segurança Eletrônica LTDA'
+  cnpj: ''             // ex.: '00.000.000/0000-00'
+};
+
+(function(){
+  const orc = CONFIG.whatsapp ? 'https://wa.me/' + CONFIG.whatsapp + '?text=' + encodeURIComponent(CONFIG.mensagem) : '';
+  document.querySelectorAll('.js-orcamento').forEach(a => {
+    if (orc) a.href = orc; else { a.removeAttribute('href'); a.title = 'link a definir'; a.addEventListener('click', e => e.preventDefault()); a.textContent = 'Link a definir'; }
+  });
+  if (CONFIG.regiao) document.querySelectorAll('.js-regiao').forEach(e => e.textContent = CONFIG.regiao);
+  if (CONFIG.razaoSocial) document.querySelector('.js-razao').textContent = CONFIG.razaoSocial;
+  if (CONFIG.cnpj) document.querySelector('.js-cnpj').textContent = ' · CNPJ ' + CONFIG.cnpj;
+  document.getElementById('ano').textContent = new Date().getFullYear();
+})();
+
+(function(){
+  const root = document.documentElement;
+  const q = new URLSearchParams(location.search);
+  const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const carregando = document.getElementById('carregando');
+  const topo = document.getElementById('topo');
+  function estatico(){ root.classList.add('estatico'); carregando.classList.add('fora'); }
+  if (q.has('sem-movimento') || reduz || !window.gsap || !window.ScrollTrigger || !window.Lenis) { estatico(); return; }
+
+  gsap.registerPlugin(ScrollTrigger);
+  const tela = document.getElementById('tela'), ctx = tela.getContext('2d');
+  const caps = [...document.querySelectorAll('.cap')];
+  const sombraEsq = document.getElementById('sombraEsq'), sombraDir = document.getElementById('sombraDir');
+  const ehCel = () => matchMedia('(max-width:820px),(orientation:portrait)').matches;
+  let modo = ehCel() ? 'mobile' : 'desktop';
+  let seq, imgs = [], estado = { f: 0 }, abriu = false, pontos = [];
+  const barra = document.getElementById('barra');
+
+  function tamanho(){
+    const dpr = Math.min(window.devicePixelRatio || 1, modo === 'mobile' ? 2 : 1.75);
+    tela.width = Math.round(innerWidth * dpr); tela.height = Math.round(innerHeight * dpr);
+    desenhar(estado.f, true);
+  }
+  function maisProximo(i){
+    if (imgs[i] && imgs[i].complete && imgs[i].naturalWidth) return imgs[i];
+    for (let d = 1; d < 40; d++) {
+      for (const j of [i - d, i + d]) { const im = imgs[j]; if (im && im.complete && im.naturalWidth) return im; }
+    }
+    return null;
+  }
+  function pinta(im, a){
+    const cw = tela.width, ch = tela.height, iw = im.naturalWidth, ih = im.naturalHeight;
+    const s = Math.max(cw / iw, ch / ih), w = iw * s, h = ih * s;
+    ctx.globalAlpha = a; ctx.drawImage(im, (cw - w) / 2, (ch - h) / 2, w, h);
+  }
+  let ultimo = -1;
+  function desenhar(f, forca){
+    if (!seq) return;
+    f = Math.max(0, Math.min(seq.total - 1, f));
+    if (!forca && Math.abs(f - ultimo) < 0.01) return; ultimo = f;
+    const i = Math.floor(f), fr = f - i;
+    const a = maisProximo(i); if (!a) return;
+    pinta(a, 1);
+    if (fr > 0.02 && i + 1 < seq.total) { const b = maisProximo(i + 1); if (b && b !== a) pinta(b, fr); }
+    ctx.globalAlpha = 1;
+  }
+  function carregar(lista, cb){
+    let n = 0; if (!lista.length) return cb && cb();
+    lista.forEach(i => {
+      if (imgs[i]) { if (++n === lista.length && cb) cb(); return; }
+      const im = new Image(); im.decoding = 'async';
+      im.onload = im.onerror = () => { n++; if (cb && n === lista.length) cb(); if (barra && !abriu) barra.style.width = (n / lista.length * 100) + '%'; };
+      im.src = 'assets/frames/' + modo + '/' + String(i).padStart(4, '0') + '.webp';
+      imgs[i] = im;
+    });
+  }
+
+  // pontos (rolagem → quadro): cena parada atrás do texto, troca entre capítulos
+  function calcPontos(){
+    const vh = innerHeight; pontos = [];
+    caps.forEach((c, k) => {
+      const t = c.offsetTop, A = seq.anchors[k];
+      pontos.push([Math.max(0, t - (k ? .22 * vh : 0)), A]);
+      pontos.push([t + .42 * vh, A]);
+    });
+  }
+  function quadroPara(y){
+    if (!pontos.length) return 0;
+    if (y <= pontos[0][0]) return pontos[0][1];
+    for (let i = 0; i < pontos.length - 1; i++) {
+      const [y0, f0] = pontos[i], [y1, f1] = pontos[i + 1];
+      if (y <= y1) { let t = (y - y0) / Math.max(1, y1 - y0); t = t * t * (3 - 2 * t); return f0 + (f1 - f0) * t; }
+    }
+    return pontos[pontos.length - 1][1];
+  }
+  function lado(y){
+    // sombra lateral acompanha o lado do texto
+    const vh = innerHeight; let k = 0;
+    caps.forEach((c, i) => { if (y + vh * .5 >= c.offsetTop) k = i; });
+    const d = caps[k].dataset.lado === 'dir';
+    sombraEsq.style.opacity = d ? 0 : 1; sombraDir.style.opacity = d ? 1 : 0;
+    topo.classList.toggle('solido', y > 40);
+  }
+
+  // revelação de texto
+  function animarTextos(){
+    caps.forEach((c, k) => {
+      const els = c.querySelectorAll('.rv');
+      if (k > 0) {
+        gsap.fromTo(els, { opacity: 0, y: 26, filter: 'blur(12px)' }, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.1, ease: 'power3.out', stagger: .09,
+          scrollTrigger: { trigger: c, start: 'top 55%', toggleActions: 'play none none reverse' } });
+      }
+      const fixo = c.querySelector('.texto');
+      if (c !== caps[caps.length - 1]) {
+        gsap.to(fixo, { opacity: 0, y: -30, filter: 'blur(8px)', ease: 'none',
+          scrollTrigger: { trigger: c, start: () => 'top+=' + innerHeight * .38 + ' top', end: () => 'top+=' + innerHeight * .6 + ' top', scrub: true } });
+      }
+    });
+    gsap.to('#dica', { opacity: 0, scrollTrigger: { trigger: caps[0], start: 'top+=40 top', end: 'top+=200 top', scrub: true } });
+  }
+
+  const lenis = new Lenis({ duration: 1.15, smoothWheel: true });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+
+  function aoRolar(){
+    const y = window.scrollY;
+    if (abriu) { estado.f = quadroPara(y); desenhar(estado.f); }
+    lado(y);
+  }
+  lenis.on('scroll', aoRolar);
+
+  function abrir(){
+    const A0 = seq.anchors[0];
+    const capaEls = caps[0].querySelectorAll('.rv');
+    carregando.classList.add('fora');
+    if (window.scrollY > 10) { abriu = true; gsap.set(capaEls, { opacity: 1 }); aoRolar(); return; }
+    lenis.stop();
+    gsap.set(capaEls, { opacity: 0, y: 24, filter: 'blur(14px)' });
+    const tl = gsap.timeline({ onComplete(){ abriu = true; lenis.start(); aoRolar(); } });
+    tl.to(estado, { f: A0, duration: 4.6, ease: 'power1.inOut', onUpdate(){ desenhar(estado.f); } }, 0);
+    tl.to(capaEls, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.3, ease: 'power3.out', stagger: .12 }, 2.9);
+  }
+
+  fetch('assets/frames/seq.json').then(r => r.json()).then(s => {
+    seq = s[modo];
+    tamanho(); calcPontos(); animarTextos(); lado(0);
+    // onda 1: abertura + âncoras + 1 a cada 4
+    const onda1 = new Set();
+    for (let i = 0; i <= seq.anchors[0]; i++) onda1.add(i);
+    seq.anchors.forEach(a => onda1.add(a));
+    for (let i = 0; i < seq.total; i += 4) onda1.add(i);
+    carregar([...onda1], () => {
+      abrir();
+      const resto = []; for (let i = 0; i < seq.total; i++) if (!imgs[i]) resto.push(i);
+      carregar(resto, () => desenhar(estado.f, true));
+    });
+    setTimeout(() => { if (!abriu && carregando && !carregando.classList.contains('fora')) abrir(); }, 9000);
+  }).catch(estatico);
+
+  addEventListener('resize', () => {
+    const novo = ehCel() ? 'mobile' : 'desktop';
+    if (novo !== modo && seq) { location.reload(); return; }
+    tamanho(); calcPontos(); ScrollTrigger.refresh(); aoRolar();
+  });
+  ScrollTrigger.addEventListener('refresh', () => { if (seq) calcPontos(); });
+})();
+</script>
+</body>
+</html>
