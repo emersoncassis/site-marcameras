@@ -3,7 +3,8 @@ MAR Câmeras — landing page
 HOSTINGER: envie index.html, a pasta assets e o .htaccess para public_html.
 Depois que o SSL estiver ativo, descomente o bloco HTTPS no .htaccess.
 
-DOKPLOY: Application, provider Git, branch main, Build Type Dockerfile, porta 80.
+DOKPLOY (Compose): Docker Compose, arquivo docker-compose.yml, serviço "web". Em Domains: serviço web, porta 80, HTTPS com Let's Encrypt.
+DOKPLOY (Application): Build Type Dockerfile, porta 80.
 
 ANTES DE PUBLICAR: preencher CONFIG no fim do index.html (regiao, razaoSocial, cnpj),
 conferir o domínio nas tags canonical/og:url/og:image (hoje: marcameras.com.br)
