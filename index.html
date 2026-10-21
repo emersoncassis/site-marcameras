@@ -696,7 +696,8 @@ const CASOS = {
   const topo = document.getElementById('topo');
   const zapF = document.getElementById('zapFlutua');
   function estatico(){ root.classList.add('estatico'); carregando.classList.add('fora'); document.querySelectorAll('.conta').forEach(c => c.textContent = c.dataset.ate); document.querySelectorAll('.passo,.dif').forEach(p => p.classList.add('on')); }
-  if (q.has('sem-movimento') || reduz || !window.gsap || !window.ScrollTrigger || !window.Lenis) { estatico(); return; }
+  if (q.has('sem-movimento') || !window.gsap || !window.ScrollTrigger || !window.Lenis) { estatico(); return; }
+  // "reduzir movimento" do sistema: mantém a rolagem cinematográfica (controlada por quem rola) e só desliga efeitos de fundo via CSS
 
   gsap.registerPlugin(ScrollTrigger);
   const tela = document.getElementById('tela'), ctx = tela.getContext('2d');
