@@ -53,9 +53,9 @@ h1,h2,h3{font-family:var(--titulo);font-weight:700;text-transform:uppercase;line
 .rotulo b{color:var(--txt);font-weight:600}
 .rotulo::before{content:"";width:22px;height:1px;background:currentColor}
 
-/* tarja + topo */
-.tarja-dev{position:fixed;top:0;left:0;right:0;z-index:70;background:var(--azul);color:#02101f;font:600 11px/1 var(--texto);letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:6px 8px}
-.topo{position:fixed;top:23px;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:12px var(--gutter);transition:background .4s,backdrop-filter .4s}
+/* topo */
+.topo{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px var(--gutter);transition:background .4s,backdrop-filter .4s,transform .5s cubic-bezier(.2,.7,.2,1),opacity .4s}
+.topo.some{transform:translateY(-110%);opacity:0;pointer-events:none}
 .topo.solido{background:rgba(4,7,12,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linha)}
 .topo .marca img{height:50px;width:auto}
 .topo nav{display:flex;gap:28px;margin-left:auto}
@@ -84,7 +84,7 @@ h1,h2,h3{font-family:var(--titulo);font-weight:700;text-transform:uppercase;line
 
 /* HUD de câmera */
 .hud{position:fixed;z-index:5;pointer-events:none;font:500 11px/1 ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:rgba(238,243,248,.78);transition:opacity .5s}
-.hud.sup{top:96px;right:var(--gutter);display:flex;gap:18px;align-items:center}
+.hud.sup{top:92px;right:var(--gutter);display:flex;gap:18px;align-items:center}
 .hud .rec{display:inline-flex;align-items:center;gap:8px;color:var(--txt)}
 .hud .rec i{width:8px;height:8px;border-radius:50%;background:var(--rec);box-shadow:0 0 10px var(--rec);animation:rec 1.2s steps(2) infinite}
 @keyframes rec{50%{opacity:.15}}
@@ -291,7 +291,6 @@ html.estatico .zap{transform:scale(1)}
 </style>
 </head>
 <body>
-<div class="tarja-dev" id="tarjaDev">Em desenvolvimento</div>
 
 <header class="topo" id="topo">
   <a class="marca" href="#inicio" aria-label="MAR Câmeras, início"><img src="assets/img/logo-mar.png" alt="MAR Câmeras" width="201" height="96"></a>
@@ -769,7 +768,7 @@ const CASOS = {
     return pontos[pontos.length - 1][1];
   }
   const dois = n => String(n).padStart(2, '0');
-  let capAtual = -1;
+  let capAtual = -1, ultimoY = 0;
   function lado(y){
     const vh = innerHeight; let k = 0;
     caps.forEach((c, i) => { if (y + vh * .5 >= c.offsetTop) k = i; });
@@ -783,6 +782,9 @@ const CASOS = {
     const fimJ = document.getElementById('depois').offsetTop;
     hudTrilho.style.width = Math.min(100, y / Math.max(1, fimJ - vh) * 100) + '%';
     topo.classList.toggle('solido', y > 40);
+    // topo some ao rolar para baixo e volta ao rolar para cima
+    if (y < 60) topo.classList.remove('some'); else if (y > ultimoY + 4) topo.classList.add('some'); else if (y < ultimoY - 8) topo.classList.remove('some');
+    ultimoY = y;
     document.body.classList.toggle('depois-ativo', y + vh * .6 > fimJ);
     zapF.classList.toggle('on', y > vh * .9);
   }

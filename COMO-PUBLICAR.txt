@@ -7,4 +7,4 @@ DOKPLOY: Application, provider Git, branch main, Build Type Dockerfile, porta 80
 
 ANTES DE PUBLICAR: preencher CONFIG no fim do index.html (regiao, razaoSocial, cnpj),
 conferir o domínio nas tags canonical/og:url/og:image (hoje: marcameras.com.br)
-e remover a tarja <div class="tarja-dev" id="tarjaDev">.
+(a tarja "Em desenvolvimento" já foi removida).
